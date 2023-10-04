@@ -9,10 +9,10 @@ public class Login_correcto extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.login_correcto);
-        TextView texto = findViewById(R.id.result_set);
 
+        TextView texto = findViewById(R.id.result_set);
         String user = getIntent().getStringExtra("USER");
 
-        texto.setText("Bienvenido: " + user);
+        texto.setText("Bienvenido @" + user);
     }
 }

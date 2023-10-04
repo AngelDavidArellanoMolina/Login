@@ -18,7 +18,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        String correctUser = "david";
+        String correctUser = "davidare";
         String correctPass = "pass123";
 
         EditText User = findViewById(R.id.usr);
@@ -33,25 +33,24 @@ public class MainActivity extends AppCompatActivity {
                 String usuario = User.getText().toString();
                 String contrasena = Password.getText().toString();
                 Log.d("User: ", usuario);
-                Log.d("User: ", contrasena);
+                Log.d("Password: ", contrasena);
 
                 if (usuario.equals(correctUser) && contrasena.equals(correctPass)) {
                     setContentView(R.layout.login_correcto);
                     texto.setText("");
                     comprobacion = usuario;
-                    comporbacion(button);
+                    cambiarPantalla(button);
                 } else {
-                    comprobacion = "¡Login incorrecto!";
+                    comprobacion = "Usuario o contraseña incorrecto";
                     texto.setText(comprobacion);
                 }
             }
         });
 
     }
-    public void comporbacion (View view){
+    public void cambiarPantalla (View view){
         Intent i = new Intent(this, Login_correcto.class);
         i.putExtra("USER", comprobacion);
         startActivity(i);
-
     }
 }
